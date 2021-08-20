@@ -1,0 +1,21 @@
+
+<table>
+    <body>
+            <tr>
+                <td id="td-label-select-operation">
+                <p >
+                    Seleccione la Operación:
+                </p>
+                </td>
+                <td id="td-select-operation">
+                    <select id="select-operation" [(ngModel)]="seleccionado" >
+                            <option id="option-operation" *ngFor="let operation of operations" [value]="operation.id">      
+                                    {{operation.name}}
+                            </option>
+                    </select>
+                </td>
+            </tr>
+    </body>
+</table>
+<router-outlet></router-outlet>
+<app-developments [id]="seleccionado"></app-developments>

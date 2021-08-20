@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <td id="td-label-select-operation">
+        <p>
+            Seleccione el Servicio:
+        </p>
+        </td>
+        <td id="td-select-development">
+            <select id="select-development" [(ngModel)]="seleccionado" (change)="onChange($event.target.value)">
+                    <option *ngFor="let develop of develops_filtrados" value="{{develop.component_name}}"  [value]="develop.component_name">  
+                            {{develop.name}}
+                    </option>
+            </select>
+        </td>
+    </tr>
+</table>

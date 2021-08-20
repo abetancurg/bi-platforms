@@ -1,0 +1,67 @@
+/*Diseño responsive design*/
+
+#div-principal {
+    background-image: url("./fondo-pagina-principal.png");
+  }
+  
+  /*Título de la página principal*/
+  h1 {
+    color: white;
+    background-color: #e40134;
+    text-align: center;
+    font-family: 'Sansation Light';
+  }
+  
+  table {
+    /*el text-align sólo funciona para los elementos
+    inline, la etiqueta <center> está obsoleta, para tablas
+    lo ideal es un margin: auto;*/
+    margin:auto;
+  }
+  
+  /*Labels que indican acción a tomar por el user*/
+  p {
+    font-family: 'Sensation Light';
+    font-size: larger;
+    background-color: #00a3a6 ;
+    color: white;
+    padding-inline: 50px;
+    text-align: center;
+  }
+  
+  /*Contenedores de la tabla, cada td es cada columna 
+  ubicada en su fila correspondiente, quiere decir que no 
+  necesariamente un td está en la misma fila de otro td*/
+  /* #td-label-select-operation {
+    
+  } */
+  /* 
+  #td-select-operation {
+    text-align: center;
+  } */
+  
+  /* #td-label-select-service {
+    margin-top: 500px;
+  } */
+  
+  /* #td-select-service {
+    text-align: center;
+  } */
+  
+  /*Etiquetas (hijas) ubicadas dentro de los contenedores*/
+  #select-operation {
+    font-family: 'Sensation Light';
+    font-size: larger;
+    background-color: #00a3a6 ;
+    color: white;
+    border: none; /*Estaba apareciendo un borde :( */
+  }
+  
+  #select-service {
+    font-family: 'Sensation Light';
+    font-size: larger;
+    background-color: #00a3a6 ;
+    color: white;
+    border: none; /*Estaba apareciendo un borde :( */
+    /*TODO: text-align: right; */
+  }
