@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { OperationsComponent } from './operations/operations.component';
 import { DevelopmentsComponent } from './developments/developments.component';
 import { DashboardComponent } from './metlife-depurador-ventas/dashboard/dashboard.component';
+import { ModulosIpdialComponent } from './metlife-depurador-ventas/modulos-ipdial/modulos-ipdial.component';
 
 
 
@@ -16,7 +17,8 @@ import { DashboardComponent } from './metlife-depurador-ventas/dashboard/dashboa
     AppComponent,
     OperationsComponent,
     DevelopmentsComponent,
-    DashboardComponent
+    DashboardComponent,
+    ModulosIpdialComponent
   ],
   imports: [
     BrowserModule,
