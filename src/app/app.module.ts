@@ -7,8 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OperationsComponent } from './operations/operations.component';
 import { DevelopmentsComponent } from './developments/developments.component';
-import { DashboardComponent } from './metlife-depurador-ventas/dashboard/dashboard.component';
-import { ModulosIpdialComponent } from './metlife-depurador-ventas/modulos-ipdial/modulos-ipdial.component';
+import { DashboardDepuradorMetlifeComponent } from './metlife-depurador-ventas/dashboard-depurador-metlife/dashboard-depurador-metlife.component';
+import { ModulosIpdialDepuradorMetlifeComponent } from './metlife-depurador-ventas/modulos-ipdial-depurador-metlife/modulos-ipdial-depurador-metlife.component';
+import { UploadFilesDepuradorMetlifeComponent } from './metlife-depurador-ventas/upload-files-depurador-metlife/upload-files-depurador-metlife.component';
+import { ModulosIpdialDescargaDepuradorMetlifeComponent } from './metlife-depurador-ventas/modulos-ipdial-descarga-depurador-metlife/modulos-ipdial-descarga-depurador-metlife.component';
+import { DateDescargaDepuradorMetlifeComponent } from './metlife-depurador-ventas/date-descarga-depurador-metlife/date-descarga-depurador-metlife.component';
 
 
 
@@ -17,8 +20,11 @@ import { ModulosIpdialComponent } from './metlife-depurador-ventas/modulos-ipdia
     AppComponent,
     OperationsComponent,
     DevelopmentsComponent,
-    DashboardComponent,
-    ModulosIpdialComponent
+    DashboardDepuradorMetlifeComponent,
+    ModulosIpdialDepuradorMetlifeComponent,
+    UploadFilesDepuradorMetlifeComponent,
+    ModulosIpdialDescargaDepuradorMetlifeComponent,
+    DateDescargaDepuradorMetlifeComponent,
   ],
   imports: [
     BrowserModule,

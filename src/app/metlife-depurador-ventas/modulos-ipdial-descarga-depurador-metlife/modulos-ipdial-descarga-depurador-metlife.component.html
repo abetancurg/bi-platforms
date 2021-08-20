@@ -1,5 +1,5 @@
 <hr>
-<h3>Los siguientes son los parámetros necesarios para el cargue de archivos:</h3>
+<h3>Los siguientes son los parámetros necesarios para el descargue de la plantilla:</h3>
 <table>
     <tr>
         <td id="td-label-select-module">
@@ -8,7 +8,7 @@
         </p>
         </td>
         <td id="td-select-module-ipdial">
-            <select id="select-module-ipdial" [(ngModel)]="seleccionado">
+                  <select id="select-module-ipdial" [(ngModel)]="seleccionado">
                     <option *ngFor="let module of ipdial_modules" [value]="module.name">      
                             {{module.name}}
                     </option>
@@ -16,4 +16,4 @@
         </td>
     </tr>
 </table>
-<!-- <app-files-to-upload-plantilla-inspector></app-files-to-upload-plantilla-inspector> -->
+<app-date-descarga-depurador-metlife></app-date-descarga-depurador-metlife>

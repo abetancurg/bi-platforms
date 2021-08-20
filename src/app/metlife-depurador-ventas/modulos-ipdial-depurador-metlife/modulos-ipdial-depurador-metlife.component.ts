@@ -5,11 +5,11 @@ import { Ipdial_modules } from '../ipdial-modules-schema'
 
 @Component({
   selector: 'app-modulos-ipdial',
-  templateUrl: './modulos-ipdial.component.html',
-  styleUrls: ['./modulos-ipdial.component.css'],
+  templateUrl: './modulos-ipdial-depurador-metlife.component.html',
+  styleUrls: ['./modulos-ipdial-depurador-metlife.component.css'],
   providers: [IpdialModulesService]
 })
-export class ModulosIpdialComponent implements OnInit {
+export class ModulosIpdialDepuradorMetlifeComponent implements OnInit {
 
   seleccionado: any = '';
 
