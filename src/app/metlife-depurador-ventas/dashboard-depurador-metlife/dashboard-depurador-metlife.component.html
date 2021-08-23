@@ -1,7 +1,8 @@
-<hr>
-<h1>¿Qué deseas hacer?</h1>
-<nav>
-        <a id="nav_carga_archivos" routerLink="modulos-ipdial_depurador_metlife">Cargar Archivo</a>
-        <a id="nav_descarga_plantillas" routerLink="modulos-ipdial-descarga_depurador_metlife">Descargar Plantilla</a>
-</nav>
+<body>
+        <div>¿Qué deseas hacer?</div>
+        <nav>
+                <a (click)="changeColorCargaArchivo()" [style.background-color]="toggle ? '#F3F1F5' : 'white'" id="nav_carga_archivos" routerLink="modulos-ipdial_depurador_metlife" >Cargar Archivo</a>
+                <a (click)="changeColorDescargaArchivo()" [style.background-color]="toggle ? 'white' : '#F3F1F5'" id="nav_descarga_plantillas" routerLink="modulos-ipdial-descarga_depurador_metlife">Descargar Plantilla</a>
+        </nav>
+</body>
 <router-outlet></router-outlet>

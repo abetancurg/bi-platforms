@@ -11,4 +11,18 @@ export class DashboardDepuradorMetlifeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  /*
+    Recuerda que !this.toggle te cambia el valor de verdad
+    al valor opuesta cada vez que hagas clic, es decir, de V
+    pasa F falso después de un clic y viceversa.
+  */
+  toggle = true ;
+
+  changeColorCargaArchivo(){
+     this.toggle = true;     
+  }
+  changeColorDescargaArchivo(){
+     this.toggle = false;     
+  }
 }

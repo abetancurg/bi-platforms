@@ -1,10 +1,16 @@
 /*Diseño responsive design*/
 
+body {
+  background-color:#F3F1F5;
+  margin: 0%
+}
+
 table {
     /*el text-align sólo funciona para los elementos
     inline, la etiqueta <center> está obsoleta, para tablas
     lo ideal es un margin: auto;*/
     margin: auto;
+    
   }
   
   /*Labels que indican acción a tomar por el user*/
@@ -21,18 +27,9 @@ table {
   #select-development {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: larger;
-    background-color: #00a3a6 ;
-    color: white;
+    color: #00a3a6;
     border: none; /*Estaba apareciendo un borde :( */
     border-radius: 7px;
     cursor: pointer;
   }
-  
-  /* #select-service {
-    font-family: 'Sensation Light';
-    font-size: larger;
-    background-color: #00a3a6 ;
-    color: white;
-    border: none; /*Estaba apareciendo un borde :( */
-    /*TODO: text-align: right; */
   
