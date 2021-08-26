@@ -45,3 +45,8 @@ body {
         border-radius: 7px;
         cursor: pointer;
       }
+
+      app-button-download-depurador-metlife {
+        display: flex;
+        justify-content: center;
+      }

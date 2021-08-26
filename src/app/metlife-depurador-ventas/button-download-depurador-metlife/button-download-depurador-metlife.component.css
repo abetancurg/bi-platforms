@@ -1,0 +1,17 @@
+#boton_descarga {
+    background-color: white;
+    color: #00a3a6;
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 5px 10px 5px 10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: larger;
+    margin-bottom: 50px;
+    box-shadow: 3px 2px 5px 1px#000;
+
+}
+
+#boton_descarga:hover{
+    transform: scale(1.1);
+    transition: 450ms all;
+}

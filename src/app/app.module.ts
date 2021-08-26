@@ -15,6 +15,7 @@ import { DateDescargaDepuradorMetlifeComponent } from './metlife-depurador-venta
 import { ButtonSelectDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-select-depurador-metlife/button-select-depurador-metlife.component';
 import { ButtonUploadDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-upload-depurador-metlife/button-upload-depurador-metlife.component';
 import { PlantillasVentasDepuradorMetlifeComponent } from './metlife-depurador-ventas/plantillas-ventas-depurador-metlife/plantillas-ventas-depurador-metlife.component';
+import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-download-depurador-metlife/button-download-depurador-metlife.component';
 
 
 
@@ -31,6 +32,7 @@ import { PlantillasVentasDepuradorMetlifeComponent } from './metlife-depurador-v
     ButtonSelectDepuradorMetlifeComponent,
     ButtonUploadDepuradorMetlifeComponent,
     PlantillasVentasDepuradorMetlifeComponent,
+    ButtonDownloadDepuradorMetlifeComponent,
   ],
   imports: [
     BrowserModule,
