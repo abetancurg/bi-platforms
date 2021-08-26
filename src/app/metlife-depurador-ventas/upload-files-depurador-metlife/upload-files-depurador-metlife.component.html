@@ -1,16 +1,22 @@
-<table>
-    <tr>
-        <td id="td-label-select-module">
-        <p>
-            Seleccione el Tipo de Archivo:
-        </p>
-        </td>
-        <td id="td-select-file_to_upload">
-            <select id="select-file_to_upload" [(ngModel)]="seleccionado">
-                    <option *ngFor="let files of File_type" [value]="files.name">      
-                            {{files.name}}
-                    </option>
-            </select>
-        </td>
-    </tr>
-</table>
+<body>
+    <h3>Los siguientes son los parámetros necesarios para el cargue de archivos:</h3>
+    <table>
+        <tr>
+            <td id="td-label-select-module">
+            <p>
+                Seleccione el Tipo de Archivo:
+            </p>
+            </td>
+            <td id="td-select-file_to_upload">
+                <select id="select-file_to_upload" [(ngModel)]="seleccionado">
+                        <option *ngFor="let files of File_type" [value]="files.name">      
+                                {{files.name}}
+                        </option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <app-button-select-depurador-metlife></app-button-select-depurador-metlife>
+    <br>
+    <br>
+</body>

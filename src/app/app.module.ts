@@ -12,6 +12,9 @@ import { ModulosIpdialDepuradorMetlifeComponent } from './metlife-depurador-vent
 import { UploadFilesDepuradorMetlifeComponent } from './metlife-depurador-ventas/upload-files-depurador-metlife/upload-files-depurador-metlife.component';
 import { ModulosIpdialDescargaDepuradorMetlifeComponent } from './metlife-depurador-ventas/modulos-ipdial-descarga-depurador-metlife/modulos-ipdial-descarga-depurador-metlife.component';
 import { DateDescargaDepuradorMetlifeComponent } from './metlife-depurador-ventas/date-descarga-depurador-metlife/date-descarga-depurador-metlife.component';
+import { ButtonSelectDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-select-depurador-metlife/button-select-depurador-metlife.component';
+import { ButtonUploadDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-upload-depurador-metlife/button-upload-depurador-metlife.component';
+import { PlantillasVentasDepuradorMetlifeComponent } from './metlife-depurador-ventas/plantillas-ventas-depurador-metlife/plantillas-ventas-depurador-metlife.component';
 
 
 
@@ -25,6 +28,9 @@ import { DateDescargaDepuradorMetlifeComponent } from './metlife-depurador-venta
     UploadFilesDepuradorMetlifeComponent,
     ModulosIpdialDescargaDepuradorMetlifeComponent,
     DateDescargaDepuradorMetlifeComponent,
+    ButtonSelectDepuradorMetlifeComponent,
+    ButtonUploadDepuradorMetlifeComponent,
+    PlantillasVentasDepuradorMetlifeComponent,
   ],
   imports: [
     BrowserModule,

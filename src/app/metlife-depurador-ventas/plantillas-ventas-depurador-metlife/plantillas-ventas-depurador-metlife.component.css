@@ -1,0 +1,47 @@
+/*Diseño responsive design*/
+
+body {
+    background-color: #F3F1F5;
+    margin: 0;
+  }
+  
+  h1 {
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      text-align: center;
+      color: #00a3a6;
+    }
+    
+    h3 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #00a3a6 ;
+      text-align: center;
+      padding-top: 10px;
+    }
+    
+    table {
+        /*el text-align sólo funciona para los elementos
+        inline, la etiqueta <center> está obsoleta, para tablas
+        lo ideal es un margin: auto;*/
+        margin:auto;
+      }
+      
+      /*Labels que indican acción a tomar por el user*/
+      p {
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: larger;
+        /* background-color: #00a3a6 ; */
+        color: #00a3a6;
+        padding-inline: 50px;
+        text-align: center;
+        
+      }
+      
+      /*Etiquetas (hijas) ubicadas dentro de los contenedores*/
+      #select-module-ipdial {
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: larger;
+        color: #00a3a6;
+        border: none; /*Estaba apareciendo un borde :( */
+        border-radius: 7px;
+        cursor: pointer;
+      }

@@ -1,5 +1,4 @@
 <body>
-    <h3>Los siguientes son los parámetros necesarios para el descargue de la plantilla:</h3>
     <table>
         <tr>
             <td id="td-label-select-module">
@@ -9,12 +8,12 @@
             </td>
             <td id="td-select-module-ipdial">
                     <select id="select-module-ipdial" [(ngModel)]="seleccionado">
-                        <option *ngFor="let module of ipdial_modules" [value]="module.name">      
+                        <option *ngFor="let module of ipdial_modules" [value]="module.IpdialId">      
                                 {{module.name}}
                         </option>
                 </select>
             </td>
         </tr>
     </table>
-    <app-date-descarga-depurador-metlife></app-date-descarga-depurador-metlife>
+    <app-plantillas-ventas-depurador-metlife [id]="seleccionado"></app-plantillas-ventas-depurador-metlife>
 </body>

@@ -25,9 +25,10 @@ export class DevelopmentsComponent implements OnChanges {
   ) { }
 
   developments: Development[] = this.developmentsServices.getDevelopment()
-  //Se agrega un primer diccionario para mejorar el look del select en el browser
+  /*
+     Se agrega un primer diccionario para mejorar el look del select en el browser
+  */
   develops_filtrados: Development[] = [{id:0,name:"--Seleccionar--", component_name: 'None'}] 
-  // developments: number[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.id)
@@ -38,12 +39,13 @@ export class DevelopmentsComponent implements OnChanges {
       this.develops_filtrados = develops_filtrados
     }
   }
-
-  //El string que contiene component_name debe coincidir con el nombre del 
-  //path ubicado en el archivo app-routing, para que el método router.navigate
-  //viaje al componente que quiero visualizar. Es decir, si elijo el proyecto X
-  //yo esperaría que el componente que voy a visualizar sea un dashboard de ese 
-  //proyecto.
+  /*
+      El string que contiene component_name debe coincidir con el nombre del 
+      path ubicado en el archivo app-routing, para que el método router.navigate
+      viaje al componente que quiero visualizar. Es decir, si elijo el proyecto X
+      yo esperaría que el componente que voy a visualizar sea un dashboard de ese 
+      proyecto.
+  */
   navigateTo(seleccionado: any){
     console.log(seleccionado)
     this.router.navigate([seleccionado])
