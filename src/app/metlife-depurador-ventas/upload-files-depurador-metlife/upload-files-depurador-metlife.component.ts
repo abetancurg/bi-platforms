@@ -12,6 +12,10 @@ import { FileTypeServices } from '../file-type-services'
 export class UploadFilesDepuradorMetlifeComponent implements OnInit {
 
   seleccionado = '';
+  
+  // imprimir(seleccionado: any){
+  //   console.log(this.seleccionado)
+  // }
 
   constructor(
     private fileTypeServices : FileTypeServices

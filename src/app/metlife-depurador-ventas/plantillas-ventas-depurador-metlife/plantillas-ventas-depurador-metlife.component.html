@@ -7,7 +7,7 @@
             </p>
             </td>
             <td id="td-select-module-ipdial">
-                <select id="select-module-ipdial" [(ngModel)]="seleccionado">
+                <select id="select-module-ipdial" [(ngModel)]="seleccionado"  (change)="imprimir(seleccionado)">
                         <option *ngFor="let plantilla of plantillas_filtradas" [value]="plantilla.name">      
                                 {{plantilla.name}}
                         </option>

@@ -16,6 +16,10 @@ export class PlantillasVentasDepuradorMetlifeComponent implements OnChanges {
   
   @Input() id = '1';
 
+  imprimir(seleccionado:any){
+    console.log(this.seleccionado)
+  }
+
   plantillas: Plantilla[] = this.plantillasServices.getPlantillas();
 
   plantillas_filtradas: Plantilla[] = [{'id':1,'name':'-- Seleccionar IpDialCode--'}]

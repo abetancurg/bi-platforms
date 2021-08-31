@@ -29,7 +29,6 @@ export class DevelopmentsComponent implements OnChanges {
      Se agrega un primer diccionario para mejorar el look del select en el browser
   */
   develops_filtrados: Development[] = [{id:0,name:"--Seleccionar--", component_name: 'None'}] 
-
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes.id)
     if (changes.id.currentValue != changes.id.previousValue){

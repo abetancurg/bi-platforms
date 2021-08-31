@@ -4,3 +4,10 @@ input{
     color: #00a3a6;
 
 }
+#parametros_carga{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
