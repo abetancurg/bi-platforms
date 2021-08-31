@@ -44,6 +44,7 @@ body {
         border: none; /*Estaba apareciendo un borde :( */
         border-radius: 7px;
         cursor: pointer;
+        outline: none;
       }
 
       app-button-download-depurador-metlife {

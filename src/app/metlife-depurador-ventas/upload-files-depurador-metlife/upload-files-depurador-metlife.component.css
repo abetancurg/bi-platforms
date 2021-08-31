@@ -7,6 +7,7 @@
     border: none; /*Estaba apareciendo un borde :( */
     border-radius: 7px;
     cursor: pointer;
+    outline: none;
   }
 
   /*Diseño responsive design*/
@@ -14,6 +15,7 @@
 body {
   background-color: #F3F1F5;
   margin: 0px;
+  height: 320px;
 }
 
 h1 {

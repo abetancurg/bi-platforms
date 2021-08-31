@@ -3,6 +3,7 @@
 body {
   background-color: #F3F1F5;
   margin: 0;
+  height: 250px;
 }
 
 h1 {
@@ -44,4 +45,5 @@ h1 {
       border: none; /*Estaba apareciendo un borde :( */
       border-radius: 7px;
       cursor: pointer;
+      outline: none;
     }
