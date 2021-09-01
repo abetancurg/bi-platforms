@@ -1,13 +1,13 @@
-<body style=" display: flex; justify-content: space-between;">
-    <img src="../../assets/sonrisa.png" alt="imagen" style="position: absolute; width: 6%; margin: 30px 0px 0px 20px;">
-    <table style="margin-left: 170px;">
+<body>
+    <img src="../../assets/sonrisa.png" alt="imagen" style="position: absolute; width: 6%; margin: 0% 0% 0% 1%;">
+    <table>
         <tr>
-            <td id="td-label-select-operation">
-                <p >
+            <td>
+                <p id="label">
                     Seleccione la Operación:
                 </p>
             </td>
-            <td id="td-select-operation">
+            <td>
                 <select id="select-operation" [(ngModel)]="seleccionado" >
                     <option id="option-operation" *ngFor="let operation of operations" [value]="operation.id">      
                         {{operation.name}}
