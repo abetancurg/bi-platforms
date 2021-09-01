@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardDepuradorMetlifeComponent } from './metlife-depurador-ventas/dashboard-depurador-metlife/dashboard-depurador-metlife.component'
 import { UploadFilesDepuradorMetlifeComponent } from './metlife-depurador-ventas/upload-files-depurador-metlife/upload-files-depurador-metlife.component'
 import { DateDescargaDepuradorMetlifeComponent } from './metlife-depurador-ventas/date-descarga-depurador-metlife/date-descarga-depurador-metlife.component'
+import { OperationsComponent } from './operations/operations.component'
 
 /*
   Es importante crear los componentes que van dentro de los proyectos
@@ -32,7 +33,13 @@ const routes: Routes = [
         component: DateDescargaDepuradorMetlifeComponent
       }
     ]
-  }  
+  }
+  ,
+  {
+    path: '', 
+    redirectTo: '/',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

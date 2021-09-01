@@ -1,14 +1,16 @@
 /*Diseño responsive design*/
   
   body {
-    margin: 0%
+    margin: 0%;
   }
   /*Título de la página principal*/
   h1 {
-    color: white;
-    background-color: #e40134;
+    color: #00abe0;
+    /* background-color: #e40134; */
     text-align: center;
     font-family: 'Sansation Light';
+    font-size: 250%;
+    
   }
   
   table {
