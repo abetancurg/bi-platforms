@@ -5,6 +5,8 @@ import { DashboardDepuradorMetlifeComponent } from './metlife-depurador-ventas/d
 import { UploadFilesDepuradorMetlifeComponent } from './metlife-depurador-ventas/upload-files-depurador-metlife/upload-files-depurador-metlife.component'
 import { DateDescargaDepuradorMetlifeComponent } from './metlife-depurador-ventas/date-descarga-depurador-metlife/date-descarga-depurador-metlife.component'
 import { OperationsComponent } from './operations/operations.component'
+import { HomeComponent } from './home/home.component'
+import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-login.component'
 
 /*
   Es importante crear los componentes que van dentro de los proyectos
@@ -40,6 +42,23 @@ const routes: Routes = [
     redirectTo: '/',
     pathMatch: 'full'
   }
+  ,
+  {
+    path:'home',
+    component: HomeComponent,
+  }
+  ,
+  {
+    path:'login',
+    component: PasswordFlowLoginComponent,
+  }
+  ,
+  {
+    path: 'logout', 
+    redirectTo: '/',
+    pathMatch: 'full'
+  }
+  
 ];
 
 @NgModule({

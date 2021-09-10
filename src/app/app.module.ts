@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { ButtonSelectDepuradorMetlifeComponent } from './metlife-depurador-venta
 import { ButtonUploadDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-upload-depurador-metlife/button-upload-depurador-metlife.component';
 import { PlantillasVentasDepuradorMetlifeComponent } from './metlife-depurador-ventas/plantillas-ventas-depurador-metlife/plantillas-ventas-depurador-metlife.component';
 import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-download-depurador-metlife/button-download-depurador-metlife.component';
+import { HomeComponent } from './home/home.component';
+import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-login.component';
 
 
 
@@ -33,6 +36,8 @@ import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ven
     ButtonUploadDepuradorMetlifeComponent,
     PlantillasVentasDepuradorMetlifeComponent,
     ButtonDownloadDepuradorMetlifeComponent,
+    HomeComponent,
+    PasswordFlowLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ven
     //que hay que incluirla manualmente para que se habilite
     //la posibilidad de usar métodos propios importados a
     //los componentes. Ejemplo -> getServicesOfAnything()
-    HttpClientModule
+    HttpClientModule,
+    OAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
