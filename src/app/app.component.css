@@ -1,7 +1,7 @@
 nav {
   display: flex;
   justify-content: flex-end;
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 
 #login{

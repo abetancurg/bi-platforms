@@ -5,6 +5,8 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const authPasswordFlowConfig: AuthConfig = {
   // Url of the Identity Provider
   issuer: 'https://contento-developer.uc.r.appspot.com/auth/admin/master/console/',
+  
+  // Access-Control-Allow-Origin: '*',
 
   // URL of the SPA to redirect the user to after login
   redirectUri: window.location.origin + '/index.html',
@@ -15,13 +17,16 @@ export const authPasswordFlowConfig: AuthConfig = {
   // The SPA's id. The SPA is registerd with this id at the auth-server
   clientId: 'metlife',
 
-  dummyClientSecret: 'geheim',
-
+  
+  dummyClientSecret: 'metlife',
+  
   // set the scope for the permissions the client should request
   // The first three are defined by OIDC. The 4th is a usecase-specific one
-  scope: 'openid profile email voucher',
+  scope: 'openid profile email',
 
   showDebugInformation: true,
 
   oidc: false,
+
+  // tokenEndpoint: 'false',
 };
