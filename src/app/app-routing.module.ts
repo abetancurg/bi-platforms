@@ -23,10 +23,23 @@ import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-
 const routes: Routes = [
   {
     path: '', 
-    redirectTo: '/',
+    redirectTo: '',
     pathMatch: 'full'
   }
   ,
+  /*
+    El home contiene de manera implícita los children de
+    operations y developments.
+
+    Hay 2 caminos para concatenar componentes.htmls
+    1. <router-outlets>
+    2. <nombre-componente>
+
+    Cuando se usa el segundo camino, no es necesario
+    registrar el path en este archivo, ya que al relacionar los <>
+    el componente automáticamente aparece de manera fija
+    sin condicionarse a un path.
+  */
   {
     path:'home',
     component: HomeComponent,
