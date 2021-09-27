@@ -9,25 +9,18 @@ import { OAuthService } from 'angular-oauth2-oidc'
 export class HomeComponent implements OnInit {
 
   constructor(
-    private oauthservice: OAuthService
-  ) {
-    this.to_store_token_in_local();
-   }
+    private oauthservice: OAuthService) {}
 
-  // public code = localStorage.getItem('code');
-  
-  to_store_token_in_local (){
-    let code_ = localStorage.setItem('code',JSON.stringify({'code':'code'}));
-    // var code = 'soy el codigo';
-    console.log(code_)
+  ngOnInit(): void {}
+
+  get givenName() {
+    const claims = this.oauthservice.getIdentityClaims();
+    if (!claims) {
+      return null;
+    }
+    console.log('Los claims son: '+ claims)
+    return claims;
   }
 
-  get access_token(){
-    return this.oauthservice.getAccessToken()
-  }
-
-
-  ngOnInit(): void {
-  }
 
 }

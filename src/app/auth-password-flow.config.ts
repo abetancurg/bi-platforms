@@ -4,7 +4,7 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authPasswordFlowConfig: AuthConfig = {
   // Url of the Identity Provider
-  issuer: 'https://contento-developer.uc.r.appspot.com/auth/admin/master/console/',
+  issuer: 'https://contento-developer.uc.r.appspot.com/auth/',
   
   // Access-Control-Allow-Origin: '*',
 

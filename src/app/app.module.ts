@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { OAuthModule } from 'angular-oauth2-oidc'
+import { OAuthModule, OAuthStorage , AuthConfig } from 'angular-oauth2-oidc'
+import { authCodeFlowConfig } from './Config/auth-code-flow.config'
+import { AuthGuard } from './shared/auth.guard.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +22,10 @@ import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ven
 import { HomeComponent } from './home/home.component';
 import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-login.component';
 
-
+//THE FOLLOWING 3 LINES ARE FOR PROOF PURPOSES ONLY:
+export function storageFactory(): OAuthStorage {
+  return localStorage
+} 
 
 @NgModule({
   declarations: [
@@ -48,9 +53,16 @@ import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-
     //la posibilidad de usar métodos propios importados a
     //los componentes. Ejemplo -> getServicesOfAnything()
     HttpClientModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(
+    //   {
+    //     resourceServer: {
+    //         allowedUrls: ['http://localhost:5000/'],
+    //         sendAccessToken: true
+    //     }
+    // }
+    )
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

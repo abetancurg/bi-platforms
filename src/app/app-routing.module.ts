@@ -21,12 +21,12 @@ import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-
 */
 
 const routes: Routes = [
-  {
-    path: '', 
-    redirectTo: '',
-    pathMatch: 'full'
-  }
-  ,
+  // {
+  //   path: '', 
+  //   redirectTo: 'PasswordFlowLoginComponent',
+  //   pathMatch: 'full'
+  // }
+  // ,
   /*
     El home contiene de manera implícita los children de
     operations y developments.
@@ -41,7 +41,7 @@ const routes: Routes = [
     sin condicionarse a un path.
   */
   {
-    path:'home',
+    path:'',
     component: HomeComponent,
     children: [
       {

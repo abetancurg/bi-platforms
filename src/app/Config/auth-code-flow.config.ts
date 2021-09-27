@@ -2,14 +2,15 @@ import { AuthConfig } from 'angular-oauth2-oidc'
 
 export const authCodeFlowConfig: AuthConfig = {
     // Url of the Identity Provider
-    issuer: 'https://contento-developer.uc.r.appspot.com/auth/admin/master/console/allow-cors',
+    // The following URL is the main URL of Local SSO:
+    issuer: 'http://host.docker.internal:9080/auth/admin/master/console/',
   
     // URL of the SPA to redirect the user to after login
     redirectUri: window.location.origin + '/index.html',
   
     // The SPA's id. The SPA is registerd with this id at the auth-server
     // clientId: 'server.code',
-    clientId: 'metlife',
+    clientId: 'bi-solutions',
   
     // Just needed if your auth server demands a secret. In general, this
     // is a sign that the auth server is not configured with SPAs in mind
@@ -23,11 +24,29 @@ export const authCodeFlowConfig: AuthConfig = {
     // The first four are defined by OIDC.
     // Important: Request offline_access to get a refresh token
     // The api scope is a usecase specific one
-    scope: 'openid profile email offline_access api',
+    scope: 'openid',
+
+    disableAtHashCheck: true,
   
     showDebugInformation: true,
 
-    sessionChecksEnabled: false,
+    requestAccessToken: true,
+    /*
+      If this is set as true, may show an error, but this error
+      is normal when one uses localhost proof.
 
-    clearHashAfterLogin: true,
+      https://github.com/manfredsteyer/angular-oauth2-oidc/blob/master/projects/lib/src/oauth-service.ts
+      529 line
+    */
+    requireHttps: false,
+
+    oidc: true,
+
+    disablePKCE: true,
+
+    // requireHttps: false,
+
+    // sessionChecksEnabled: false,
+
+    // clearHashAfterLogin: true,
   };
