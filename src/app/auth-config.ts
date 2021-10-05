@@ -35,5 +35,5 @@ export const authConfig: AuthConfig = {
     For implicit flow one uses "token" as value, and in 
     refresh flows one uses "code" as value
   */
-  responseType: 'token',
+  // responseType: 'token',
 };

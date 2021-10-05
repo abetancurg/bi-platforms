@@ -30,10 +30,10 @@ export class DevelopmentsComponent implements OnChanges {
   */
   develops_filtrados: Development[] = [{id:0,name:"--Seleccionar--", component_name: 'None'}] 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes.id)
+    // console.log(changes.id)
     if (changes.id.currentValue != changes.id.previousValue){
       const id_recibido = changes.id.currentValue;
-      console.log(this.developments)
+      // console.log(this.developments)
       const develops_filtrados = this.developments.filter(develop_filtrado => develop_filtrado.id == id_recibido)
       this.develops_filtrados = develops_filtrados
     }

@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule, OAuthStorage , AuthConfig } from 'angular-oauth2-oidc'
-import { authCodeFlowConfig } from './Config/auth-code-flow.config'
-import { AuthGuard } from './shared/auth.guard.service'
+import { authCodeFlowConfig } from './config/auth-code-flow.config'
+// import { AuthGuard } from './shared/auth.guard.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,7 +62,7 @@ export function storageFactory(): OAuthStorage {
     // }
     )
   ],
-  providers: [AuthGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

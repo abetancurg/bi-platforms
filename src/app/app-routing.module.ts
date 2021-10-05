@@ -41,7 +41,7 @@ const routes: Routes = [
     sin condicionarse a un path.
   */
   {
-    path:'',
+    path:'home',
     component: HomeComponent,
     children: [
       {
@@ -71,6 +71,11 @@ const routes: Routes = [
     path: 'logout', 
     redirectTo: '/',
     pathMatch: 'full'
+  }
+  ,
+  {
+    path: '**', 
+    redirectTo: '/'
   }
   
 ];

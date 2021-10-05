@@ -3,17 +3,17 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { Observable } from 'rxjs';
 import { OAuthService } from 'angular-oauth2-oidc';
 
-@Injectable()
-export class AuthGuard implements CanActivate {
+// @Injectable()
+// export class AuthGuard implements CanActivate {
 
-  constructor(private oauthService: OAuthService, private router: Router) { }
+//   constructor(private oauthService: OAuthService, private router: Router) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-    if (this.oauthService.hasValidIdToken()) {
-      return true;
-    }
+//   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+//     if (this.oauthService.hasValidIdToken()) {
+//       return true;
+//     }
 
-    this.router.navigate(['/home']);
-    return false;
-  }
-}
+//     this.router.navigate(['/home']);
+//     return false;
+//   }
+// }
