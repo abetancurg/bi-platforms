@@ -1,6 +1,5 @@
 import { Component,Injectable } from '@angular/core';
 import { authCodeFlowConfig } from './config/auth-code-flow.config'
-import { authConfig } from './auth-config'
 import { OAuthService, OAuthStorage } from 'angular-oauth2-oidc'
 import { useHash } from '../../src/flags'
 import { Router } from '@angular/router'
@@ -28,7 +27,7 @@ export class AppComponent {
   
   title = 'bi-services';
   
-  constructor(private oauthService:OAuthService){
+  constructor(private oauthService:OAuthService, private http:HttpClient){
     this.configureSingleSignOn();
   }   
   
@@ -36,20 +35,19 @@ export class AppComponent {
     this.oauthService.configure(authCodeFlowConfig);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndLogin();
-    const estado = this.oauthService.state;
-    console.log('EL ESTADO ES: ' + estado)
+    // const claims = this.oauthService.getIdentityClaims();
+    // console.log('CLAIMS ARE: ' + claims)
     // this.oauthService.setStorage(localStorage);
-    // const token = this.oauthService.getIdentityClaims();
-    // console.log('TOKEN IS: '+ token)
+    var token = sessionStorage.getItem('access_token');
+    console.log('ACCESS_TOKEN IS: '+ token)
     
   }
   
   login(){
-            this.oauthService.initImplicitFlow();
+            this.oauthService.initCodeFlow();
           }
   logout(){
             this.oauthService.logOut();
-            console.log('ESTOY DESLOGUEADO')
           }
 }
 

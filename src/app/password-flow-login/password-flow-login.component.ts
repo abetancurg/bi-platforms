@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc'
-import { authPasswordFlowConfig } from '../auth-password-flow.config';
 
 @Component({
   selector: 'app-password-flow-login',
@@ -15,7 +14,6 @@ export class PasswordFlowLoginComponent implements OnInit {
   userProfile: object = [];
 
   constructor(private oauthService: OAuthService) { 
-    this.oauthService.configure(authPasswordFlowConfig);
     this.oauthService.loadDiscoveryDocument();
   }
 

@@ -54,12 +54,12 @@ export function storageFactory(): OAuthStorage {
     //los componentes. Ejemplo -> getServicesOfAnything()
     HttpClientModule,
     OAuthModule.forRoot(
-    //   {
-    //     resourceServer: {
-    //         allowedUrls: ['http://localhost:5000/'],
-    //         sendAccessToken: true
-    //     }
-    // }
+      {
+        resourceServer: {
+            allowedUrls: ['http://localhost:63214/outcomes'],
+            sendAccessToken: true
+        }
+    }
     )
   ],
   providers: [],
