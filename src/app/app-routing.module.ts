@@ -21,12 +21,17 @@ import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-
 */
 
 const routes: Routes = [
-  // {
-  //   path: '', 
-  //   redirectTo: 'PasswordFlowLoginComponent',
-  //   pathMatch: 'full'
-  // }
-  // ,
+  /* 
+      El siguiente path se tuvo que comentariar porque la url cuando recibe 
+      los claims, este comodín me lo redirecciona al home ... y se genera un bucle,
+      como si del home se solicitaran los claims y así sucesivamente.
+      
+      {
+        path: '**', 
+        redirectTo: '/home'
+      }
+  */
+
   /*
     El home contiene de manera implícita los children de
     operations y developments.
@@ -39,13 +44,15 @@ const routes: Routes = [
     registrar el path en este archivo, ya que al relacionar los <>
     el componente automáticamente aparece de manera fija
     sin condicionarse a un path.
+
+    IMPORTANT!: No se puede apuntar con diferentes paths a un mismo componente.
   */
   {
     path:'home',
     component: HomeComponent,
     children: [
       {
-      path: 'dashboard_depurador_metlife', 
+      path:'dashboard_depurador_metlife', 
       component: DashboardDepuradorMetlifeComponent,
       children: [
                       { 
@@ -71,13 +78,7 @@ const routes: Routes = [
     path: 'logout', 
     redirectTo: '/',
     pathMatch: 'full'
-  }
-  ,
-  {
-    path: '**', 
-    redirectTo: '/'
-  }
-  
+  }  
 ];
 
 @NgModule({
