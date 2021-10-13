@@ -36,8 +36,6 @@ export class AppComponent {
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndLogin();
     var token = sessionStorage.getItem('access_token');
-    console.log('el tipo de ACCESS_TOKEN es: '+ typeof(token))    
-    console.log('ACCESS_TOKEN IS: '+ token)    
   }
   
   login(){

@@ -57,7 +57,7 @@ export function storageFactory(): OAuthStorage {
     OAuthModule.forRoot(
       {
         resourceServer: {
-            allowedUrls: ['http://localhost:5000/outcomes'],
+            allowedUrls: ['http://localhost:5000/outcomes/'],
             sendAccessToken: true
         }
     }

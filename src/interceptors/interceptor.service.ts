@@ -21,10 +21,10 @@ export class InterceptorService implements HttpInterceptor {
 
         https://stackoverflow.com/a/40350534 non-null assertion operator (!)
     */
-    var token  = sessionStorage.getItem('id_token')!;
+    var token  = sessionStorage.getItem('access_token')!;
     
     const headers = new HttpHeaders({
-      'Token': token,
+      'Authorization': 'Bearer ' + token,
     });
 
     const reqClone = req.clone({
