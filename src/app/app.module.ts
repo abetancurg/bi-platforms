@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OAuthModule, OAuthStorage , AuthConfig } from 'angular-oauth2-oidc'
 import { authCodeFlowConfig } from './config/auth-code-flow.config'
 // import { AuthGuard } from './shared/auth.guard.service'
@@ -21,6 +21,7 @@ import { PlantillasVentasDepuradorMetlifeComponent } from './metlife-depurador-v
 import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ventas/button-download-depurador-metlife/button-download-depurador-metlife.component';
 import { HomeComponent } from './home/home.component';
 import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-login.component';
+import { InterceptorService } from 'src/interceptors/interceptor.service';
 
 //THE FOLLOWING 3 LINES ARE FOR PROOF PURPOSES ONLY:
 export function storageFactory(): OAuthStorage {
@@ -56,13 +57,22 @@ export function storageFactory(): OAuthStorage {
     OAuthModule.forRoot(
       {
         resourceServer: {
-            allowedUrls: ['http://localhost:63214/outcomes'],
+            allowedUrls: ['http://localhost:5000/outcomes'],
             sendAccessToken: true
         }
     }
     )
   ],
-  providers: [],
+  providers: [
+    {
+      //http tipo interceptor
+      provide: HTTP_INTERCEPTORS,
+      //esta es la clase que se define que va a usar el interceptor
+      useClass: InterceptorService,
+      //para que esté pendiente de todas las peticiones que hacemos
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

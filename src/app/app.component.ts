@@ -35,12 +35,9 @@ export class AppComponent {
     this.oauthService.configure(authCodeFlowConfig);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndLogin();
-    // const claims = this.oauthService.getIdentityClaims();
-    // console.log('CLAIMS ARE: ' + claims)
-    // this.oauthService.setStorage(localStorage);
     var token = sessionStorage.getItem('access_token');
-    console.log('ACCESS_TOKEN IS: '+ token)
-    
+    console.log('el tipo de ACCESS_TOKEN es: '+ typeof(token))    
+    console.log('ACCESS_TOKEN IS: '+ token)    
   }
   
   login(){
