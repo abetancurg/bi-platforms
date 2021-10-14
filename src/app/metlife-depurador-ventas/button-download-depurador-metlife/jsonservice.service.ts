@@ -9,24 +9,34 @@ export class JsonserviceService {
 
   constructor(private http:HttpClient) { }
 
-  consultaTMO (url: string){
+    consultaTMO (url: string){
 
-    let params = new HttpParams().append('ip_dialcode','intcob-serfinanza');
-    params = params.append('prefix','prueba-desde-angular');
-    params = params.append('outcome_type','consulta-tmo');
-    params = params.append('since','2021-10-06');
-    params = params.append('until','2021-10-07');
-    params = params.append('separator','%7C');
-    // params = params.append('Access-Control-Allow-Origin','*');
+    let params = new HttpParams().append('churrito','churrito');
+        // params = params.append('prefix','prueba-desde-angular');
+        // params = params.append('outcome_type','consulta-tmo');
+        // params = params.append('since','2021-10-06');
+        // params = params.append('until','2021-10-07');
+        // params = params.append('separator','%7C');
+        // params = params.append('Access-Control-Allow-Origin','*');
 
-    console.log(params)
+    // console.log(params)
 
-    return this.http.post(url,{
-      params
-    })
-    // .pipe(
-    //   map(resp => resp)
-    // )
+    /*
+       Si deseo un servicio via GET, parte de la estructura es:
 
+          this.http.get(url)
+
+       Si deseo un servicio via POST, parte de la estructura es:
+
+          this.http.post(url, params) <-- Los params son por protocolo, en ellos
+          no es necesario enviar datos.
+    */
+
+    return this.http.post(url, params)
+    .pipe(
+      map(resp => 
+        console.log(resp)
+     )
+    )
   }
 }

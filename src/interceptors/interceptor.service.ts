@@ -32,6 +32,7 @@ export class InterceptorService implements HttpInterceptor {
     })
 
     //El next.handle() hace que por acá pase todo lo que llegue por requerimientos http
+    //Es decir, que todo requerimiento que se haga, se le incluye este token
     //ToDo: add the ErrorHandler
     return next.handle(reqClone)
     
