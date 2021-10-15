@@ -12,9 +12,10 @@ export class DateDescargaTmoMetlifeComponent  {
 
   // ngOnInit(): void {
   // }
+  /*ngModel te permite enviar datos entre componentes,
+  no sólo basta con usar [value]="prueba" dentro del <Input>*/
 
   fechaIni = 0;
-  // variable = 
   fechaFin = 0;
 
 }

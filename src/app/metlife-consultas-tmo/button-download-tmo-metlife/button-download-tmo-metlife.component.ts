@@ -11,17 +11,15 @@ import { DateDescargaTmoMetlifeComponent } from '../date-descarga-tmo-metlife/da
 export class ButtonDownloadTmoMetlifeComponent implements OnInit {
 
   @Input() fechaIni = 0;
-
-  variableExterna = 2;
-
+  @Input() fechaFin = 0;
+  @Input() moduloIpDial = 0;
 
   constructor(public json: JsonserviceService, private dateDescargaTmo:DateDescargaTmoMetlifeComponent) { }
 
   // fechaInicial = this.dateDescargaTmo.funcion()
   // fechaInicial = this.dateDescargaTmo.fechaFin
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
     /*
     Sólo para pruebas: se pueden inhabilitar los CORS de chrome
@@ -33,7 +31,8 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
 
     correrConsultaTMO (){
       // console.log(`LLEGÓ LA SIGUIENTE FEHCA: ${this.fecha}`)
-      this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-06&until=2021-10-07&ip_dialcode=intcob-serfinanza&prefix=ejemplo_curl&separator=%7C`)
+      this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&prefix=reporte-solicitado&separator=%7C`)
+      // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&prefix=reporte-solicitado&separator=%7C')
           .subscribe((res) => {
           console.log(res);
       })

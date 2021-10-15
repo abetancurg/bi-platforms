@@ -6,8 +6,8 @@ import { Ipdial_modules } from './ipdial-modules-schema'
 */
 
 export const IPDIAL_MODULES: Ipdial_modules[] = [
-    { IpdialId : 4 , name: 'Intcob-colsubsidio' },
-    { IpdialId : 1 , name: 'Intcob-metlife-cafam' },
-    { IpdialId : 2 , name: 'Intcob-serfinanza' },
-    { IpdialId : 3 , name: 'Intcob-serfinanza-stock' },
+    { IpdialId : 4 , name: 'intcob-colsubsidio' },
+    { IpdialId : 1 , name: 'intcob-metlife-cafam' },
+    { IpdialId : 2 , name: 'intcob-serfinanza' },
+    { IpdialId : 3 , name: 'intcob-serfinanza-stock' },
 ] 

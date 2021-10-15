@@ -14,6 +14,12 @@ h3 {
 body {
   background-color: #F3F1F5;
   margin: 0;
-  height: 300px;
+  height: 350px;
   box-shadow: 2px 2px 5px 3px rgba(185, 155, 155, 0.5);
+}
+
+app-button-download-tmo-metlife {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }

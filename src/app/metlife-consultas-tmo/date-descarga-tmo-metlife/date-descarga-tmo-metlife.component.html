@@ -5,7 +5,5 @@
     Fecha Inicial: &nbsp;&nbsp;<input type="date" [(ngModel)]="fechaIni" [value]="fechaIni"> &nbsp;&nbsp;
     Fecha Final: &nbsp;&nbsp;<input type="date" [(ngModel)]="fechaFin" [value]="fechaFin">
     </div>
-    {{fechaIni}}
-    {{fechaFin}}
-    <app-modulos-ipdial-tmo-metlife [array]="fechaIni,fechaFin"></app-modulos-ipdial-tmo-metlife>
+    <app-modulos-ipdial-tmo-metlife [fechaIni]="fechaIni" [fechaFin]="fechaFin" ></app-modulos-ipdial-tmo-metlife>
 </body>

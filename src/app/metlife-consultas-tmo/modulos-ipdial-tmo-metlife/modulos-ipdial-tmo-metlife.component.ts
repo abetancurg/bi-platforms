@@ -9,7 +9,7 @@ import { IpdialModulesService } from '../ipdial-modules-services';
 })
 export class ModulosIpdialTmoMetlifeComponent implements OnInit {
 
-  @Input() array = [];
+  @Input() fechaIni = 0;
   @Input() fechaFin = 0;
 
   seleccionado: any = '';

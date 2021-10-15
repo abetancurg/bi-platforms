@@ -35,7 +35,7 @@ export class AppComponent {
     this.oauthService.configure(authCodeFlowConfig);
     this.oauthService.tokenValidationHandler = new JwksValidationHandler();
     this.oauthService.loadDiscoveryDocumentAndLogin();
-    var token = sessionStorage.getItem('access_token');
+    // var token = sessionStorage.getItem('access_token');
   }
   
   login(){

@@ -3,7 +3,8 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const authCodeFlowConfig: AuthConfig = {
 
     //The following url you might extract from de well-known part of the Línea de Producción:
-    issuer : 'http://host.docker.internal:9080/auth/realms/contento-local',
+    // issuer : 'http://host.docker.internal:9080/auth/realms/contento-local',
+    issuer : 'http://sso-server:9080/auth/realms/contento-local',
 
     requireHttps: false,
 
@@ -11,7 +12,7 @@ export const authCodeFlowConfig: AuthConfig = {
 
     responseType : 'code',
     
-    scope : 'openid',
+    scope : 'openid email profile',
 
   // URL of the SPA to redirect the user to after login
     redirectUri: 'http://localhost:4200/home' ,
