@@ -22,6 +22,9 @@ import { ButtonDownloadDepuradorMetlifeComponent } from './metlife-depurador-ven
 import { HomeComponent } from './home/home.component';
 import { PasswordFlowLoginComponent } from './password-flow-login/password-flow-login.component';
 import { InterceptorService } from 'src/interceptors/interceptor.service';
+import { DateDescargaTmoMetlifeComponent } from './metlife-consultas-tmo/date-descarga-tmo-metlife/date-descarga-tmo-metlife.component';
+import { ModulosIpdialTmoMetlifeComponent } from './metlife-consultas-tmo/modulos-ipdial-tmo-metlife/modulos-ipdial-tmo-metlife.component';
+import { ButtonDownloadTmoMetlifeComponent } from './metlife-consultas-tmo/button-download-tmo-metlife/button-download-tmo-metlife.component';
 
 //THE FOLLOWING 3 LINES ARE FOR PROOF PURPOSES ONLY:
 export function storageFactory(): OAuthStorage {
@@ -44,6 +47,9 @@ export function storageFactory(): OAuthStorage {
     ButtonDownloadDepuradorMetlifeComponent,
     HomeComponent,
     PasswordFlowLoginComponent,
+    DateDescargaTmoMetlifeComponent,
+    ModulosIpdialTmoMetlifeComponent,
+    ButtonDownloadTmoMetlifeComponent,
   ],
   imports: [
     BrowserModule,

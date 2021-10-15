@@ -11,17 +11,9 @@ h3 {
     text-align: center;
     padding-top: 10px;
   }
-
-/*
-  Bajo la condición de que en el html los componentes anidados estén dentro del <body>
-  El height del desarrollo lo puedo adminstrar desde el primer componente anidado, 
-  que en este caso es el date-descarga-... Sin embargo, el color respecta el área de los
-  demás componentes, por lo tanto se hace necesario, rellenar del mismo color, los demás 
-  componentes.
-*/
 body {
   background-color: #F3F1F5;
   margin: 0;
-  height: 450px;
+  height: 300px;
   box-shadow: 2px 2px 5px 3px rgba(185, 155, 155, 0.5);
 }

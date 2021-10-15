@@ -1,0 +1,19 @@
+<body>
+    <table>
+        <tr>
+            <td id="td-label-select-module">
+            <p>
+                Seleccione el Módulo IpDial:
+            </p>
+            </td>
+            <td id="td-select-module-ipdial">
+                <select id="select-module-ipdial" [(ngModel)]="seleccionado">
+                        <option *ngFor="let module of ipdial_modules" [value]="module.name">      
+                                {{module.name}}
+                        </option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <app-button-download-tmo-metlife></app-button-download-tmo-metlife>
+</body>
