@@ -33,9 +33,23 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
       // console.log(`LLEGÓ LA SIGUIENTE FEHCA: ${this.fecha}`)
       this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&prefix=reporte-solicitado&separator=%7C`)
       // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&prefix=reporte-solicitado&separator=%7C')
-          .subscribe((res) => {
-          console.log(res);
-      })
+          .subscribe(
+              function name(res: any) {
+              console.log(`OUTCOME ORDER:`)
+              console.log(res)
+              console.log(`---------------`)
+              const value = []
+              value.push(res)
+              const dataType = 'text/plain;charset=utf-8'//'application/vnd.ms-excel'
+              const filePath = window.URL.createObjectURL(new Blob(value,{type: dataType}));
+              const downloadLink = document.createElement("a");
+              downloadLink.href = filePath;
+              downloadLink.setAttribute("download","PRUEBA_DESCARGA");
+              document.body.appendChild(downloadLink);
+              downloadLink.click();
+            }
+
+      )
     }
    
     //http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-06&until=2021-10-07&ip_dialcode=intcob-serfinanza&prefix=ejemplo_curl&separator=%7C

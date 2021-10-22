@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -32,11 +33,17 @@ export class JsonserviceService {
           no es necesario enviar datos.
     */
 
+    // const retornado$ = of('por fin')
+
     return this.http.post(url, params)
-    .pipe(
-      map(resp => 
-        console.log(resp)
-     )
-    )
+    // .pipe(
+    //   map(resp => 
+    //     // console.log(resp)
+    //     resp
+    //  )
+    // )
+
+    
+
   }
 }
