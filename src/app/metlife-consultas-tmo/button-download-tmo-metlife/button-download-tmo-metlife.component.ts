@@ -31,20 +31,27 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
 
     correrConsultaTMO (){
       // console.log(`LLEGÓ LA SIGUIENTE FEHCA: ${this.fecha}`)
-      this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&prefix=reporte-solicitado&separator=%7C`)
-      // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&prefix=reporte-solicitado&separator=%7C')
+      this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&separator=%7C`)
+      // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&separator=%7C')
           .subscribe(
               function name(res: any) {
-              console.log(`OUTCOME ORDER:`)
-              console.log(res)
-              console.log(`---------------`)
-              const value = []
-              value.push(res)
+                /*
+                  Para visualizar un Object en string y poderlo tomar para
+                  descarga.
+
+                  https://stackoverflow.com/a/51638253
+                */
+              const resConverted = JSON.stringify(res)
+              const data = []
+              data.push(resConverted)
+                console.log(`OBJECT CON PROTOTYPE:`)
+                console.log(resConverted)
+                console.log(`---------------`)
               const dataType = 'text/plain;charset=utf-8'//'application/vnd.ms-excel'
-              const filePath = window.URL.createObjectURL(new Blob(value,{type: dataType}));
+              const filePath = window.URL.createObjectURL(new Blob(data,{type: dataType}));
               const downloadLink = document.createElement("a");
               downloadLink.href = filePath;
-              downloadLink.setAttribute("download","PRUEBA_DESCARGA");
+              downloadLink.setAttribute("download","Informe_Solicitado");
               document.body.appendChild(downloadLink);
               downloadLink.click();
             }

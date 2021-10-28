@@ -12,38 +12,55 @@ export class JsonserviceService {
 
     consultaTMO (url: string){
 
-    let params = new HttpParams().append('churrito','churrito');
-        // params = params.append('prefix','prueba-desde-angular');
-        // params = params.append('outcome_type','consulta-tmo');
-        // params = params.append('since','2021-10-06');
-        // params = params.append('until','2021-10-07');
-        // params = params.append('separator','%7C');
-        // params = params.append('Access-Control-Allow-Origin','*');
+      let params = new HttpParams().append('churrito','churrito');
 
-    // console.log(params)
+      /*
+        Si deseo un servicio via GET, parte de la estructura es:
 
-    /*
-       Si deseo un servicio via GET, parte de la estructura es:
+            this.http.get(url)
 
-          this.http.get(url)
+        Si deseo un servicio via POST, parte de la estructura es:
 
-       Si deseo un servicio via POST, parte de la estructura es:
+            this.http.post(url, params) <-- Los params son por protocolo, en ellos
+            no es necesario enviar datos.
+      */
+     
+      return this.http.post(url, params)
 
-          this.http.post(url, params) <-- Los params son por protocolo, en ellos
-          no es necesario enviar datos.
-    */
+    }
 
-    // const retornado$ = of('por fin')
+    getStatusOrder (url: string){
 
-    return this.http.post(url, params)
-    // .pipe(
-    //   map(resp => 
-    //     // console.log(resp)
-    //     resp
-    //  )
-    // )
 
-    
+      /*
+        Si deseo un servicio via GET, parte de la estructura es:
 
-  }
+            this.http.get(url)
+
+        Si deseo un servicio via POST, parte de la estructura es:
+
+            this.http.post(url, params) <-- Los params son por protocolo, en ellos
+            no es necesario enviar datos.
+      */
+
+      return this.http.get(url)
+
+    }
+    downloadFilesFromOrder (url: string){
+
+
+      /*
+        Si deseo un servicio via GET, parte de la estructura es:
+
+            this.http.get(url)
+
+        Si deseo un servicio via POST, parte de la estructura es:
+
+            this.http.post(url, params) <-- Los params son por protocolo, en ellos
+            no es necesario enviar datos.
+      */
+
+      return this.http.get(url)
+
+    }
 }

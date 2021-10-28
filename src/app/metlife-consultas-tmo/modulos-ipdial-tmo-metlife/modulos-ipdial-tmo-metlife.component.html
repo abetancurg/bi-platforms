@@ -16,5 +16,26 @@
         </tr>
     </table>
     <!-- <div [(ngModel)]="seleccionado" [value]="fechaIni"></div> -->
-    <app-button-download-tmo-metlife [fechaIni]="fechaIni" [fechaFin]="fechaFin" [moduloIpDial]="seleccionado"></app-button-download-tmo-metlife>
+    <!-- <app-button-download-tmo-metlife [fechaIni]="fechaIni" [fechaFin]="fechaFin" [moduloIpDial]="seleccionado"></app-button-download-tmo-metlife> -->
+
+    
+    <button (click)="crearOrden()">CREAR ORDEN</button>
+
+    <h1>PREGUNTAR STATUS DE LA ORDEN</h1>
+
+    ORDER_ID: <input type="text" [(ngModel)]="statusOrdenId">
+
+    <button (click)="solicitarStatusOrden()">SOLICITAR STATUS</button>
+
+    <h1>DESCARGAR ARCHIVO DE LA ORDEN</h1>
+
+    ORDER_ID: <input type="text" [(ngModel)]="downloadOrdenId">
+
+    <button (click)="descargarArchivo()">DESCARGAR ARCHIVO</button>
+    <BR>
+    <BR>
+    <BR>
+
+
+
 </body>
