@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { JsonserviceService } from './jsonservice.service';
+import { HttpServices } from '../../commons/jsonservice.service';
 import { DateDescargaTmoMetlifeComponent } from '../date-descarga-tmo-metlife/date-descarga-tmo-metlife.component'
 
 
@@ -14,7 +14,7 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
   @Input() fechaFin = 0;
   @Input() moduloIpDial = 0;
 
-  constructor(public json: JsonserviceService, private dateDescargaTmo:DateDescargaTmoMetlifeComponent) { }
+  constructor(public json: HttpServices, private dateDescargaTmo:DateDescargaTmoMetlifeComponent) { }
 
   // fechaInicial = this.dateDescargaTmo.funcion()
   // fechaInicial = this.dateDescargaTmo.fechaFin
@@ -31,7 +31,7 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
 
     correrConsultaTMO (){
       // console.log(`LLEGÓ LA SIGUIENTE FEHCA: ${this.fecha}`)
-      this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&separator=%7C`)
+      this.json.crearOrden(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&separator=%7C`)
       // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&separator=%7C')
           .subscribe(
               function name(res: any) {

@@ -7,7 +7,7 @@
             </p>
             </td>
             <td id="td-select-module-ipdial">
-                <select id="select-module-ipdial" [(ngModel)]="seleccionado">
+                <select id="select-module-ipdial" [(ngModel)]="nombreIdDialCode">
                         <option *ngFor="let module of ipdial_modules" [value]="module.name">      
                                 {{module.name}}
                         </option>
@@ -15,7 +15,7 @@
             </td>
         </tr>
     </table>
-    <!-- <div [(ngModel)]="seleccionado" [value]="fechaIni"></div> -->
+    <!-- <div [(ngModel)]="nombreIdDialCode" [value]="fechaIni"></div> -->
     <!-- <app-button-download-tmo-metlife [fechaIni]="fechaIni" [fechaFin]="fechaFin" [moduloIpDial]="seleccionado"></app-button-download-tmo-metlife> -->
 
     

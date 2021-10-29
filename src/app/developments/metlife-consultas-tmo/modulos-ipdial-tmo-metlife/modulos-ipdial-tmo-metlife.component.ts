@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { JsonserviceService } from '../button-download-tmo-metlife/jsonservice.service';
+import { HttpServices } from '../../commons/jsonservice.service';
 import { Ipdial_modules } from '../ipdial-modules-schema';
 import { IpdialModulesService } from '../ipdial-modules-services';
 
@@ -16,13 +17,13 @@ export class ModulosIpdialTmoMetlifeComponent implements OnInit {
   statusOrdenId: string = "";
   downloadOrdenId: string = "";
 
-  createOrderId: string = "";
+  nombreIdDialCode: string = "";
 
-  seleccionado: any = '';
+  nombreModulo: any = '';
 
   constructor(
     private ipdialModuleService: IpdialModulesService,
-    public json: JsonserviceService,
+    public httpServices: HttpServices,
   ) { }
   
   public ipdial_modules: Ipdial_modules[] = []
@@ -32,8 +33,7 @@ export class ModulosIpdialTmoMetlifeComponent implements OnInit {
   }
 
   crearOrden(){
-    this.json.consultaTMO(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.seleccionado}&separator=%7C`)
-      // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&separator=%7C')
+    this.httpServices.crearOrden(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.nombreIdDialCode}&separator=%7C`)
           .subscribe(
             (res: any) => {
                 const orderId = res.order_id;
@@ -47,9 +47,8 @@ export class ModulosIpdialTmoMetlifeComponent implements OnInit {
     
     solicitarStatusOrden(){
       // mostrarRueditaDeEspera()
-
       console.log("La orden solicitada es: ",this.statusOrdenId)
-      this.json.getStatusOrder(`http://localhost:5000/orders/${this.statusOrdenId}`)
+      this.httpServices.getStatusOrder(`http://localhost:5000/orders/${this.statusOrdenId}`)
             .subscribe(
               (res: any) => {
                   const orderId = res.order_id;
@@ -66,7 +65,7 @@ export class ModulosIpdialTmoMetlifeComponent implements OnInit {
       
       descargarArchivo(){
         console.log("El archivo a descargar es de la orden: ",this.downloadOrdenId)
-        this.json.downloadFilesFromOrder(`http://localhost:5000/orders/${this.statusOrdenId}/files`)
+        this.httpServices.downloadFilesFromOrder(`http://localhost:5000/orders/${this.statusOrdenId}/files`)
               .subscribe(
                 (res: any) => {
                   //Acá recibo el archivo que quiero descargar tal como se hizo con el outcome_order para

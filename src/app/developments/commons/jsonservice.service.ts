@@ -6,11 +6,11 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class JsonserviceService {
+export class HttpServices {
 
   constructor(private http:HttpClient) { }
 
-    consultaTMO (url: string){
+    crearOrden (url: string){
 
       let params = new HttpParams().append('churrito','churrito');
 
@@ -31,34 +31,11 @@ export class JsonserviceService {
 
     getStatusOrder (url: string){
 
-
-      /*
-        Si deseo un servicio via GET, parte de la estructura es:
-
-            this.http.get(url)
-
-        Si deseo un servicio via POST, parte de la estructura es:
-
-            this.http.post(url, params) <-- Los params son por protocolo, en ellos
-            no es necesario enviar datos.
-      */
-
       return this.http.get(url)
 
     }
+    
     downloadFilesFromOrder (url: string){
-
-
-      /*
-        Si deseo un servicio via GET, parte de la estructura es:
-
-            this.http.get(url)
-
-        Si deseo un servicio via POST, parte de la estructura es:
-
-            this.http.post(url, params) <-- Los params son por protocolo, en ellos
-            no es necesario enviar datos.
-      */
 
       return this.http.get(url)
 
