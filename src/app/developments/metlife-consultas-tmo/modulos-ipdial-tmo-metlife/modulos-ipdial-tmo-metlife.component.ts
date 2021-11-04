@@ -65,11 +65,23 @@ export class ModulosIpdialTmoMetlifeComponent implements OnInit {
       
       descargarArchivo(){
         console.log("El archivo a descargar es de la orden: ",this.downloadOrdenId)
-        this.httpServices.downloadFilesFromOrder(`http://localhost:5000/orders/${this.statusOrdenId}/files`)
+        // this.httpServices.downloadFilesFromOrder(`http://localhost:5000/orders/${this.statusOrdenId}/files`)
+        this.httpServices.downloadFilesFromOrder(`http://localhost:5000/downloads/?order_id=906a49eb-537a-4c85-bde5-d502759a0ed0`)
               .subscribe(
                 (res: any) => {
                   //Acá recibo el archivo que quiero descargar tal como se hizo con el outcome_order para
                   //guardarlo en json
+                  console.log(res)
+                  const resConverted = JSON.stringify(res)
+                  const data = []
+                  data.push(resConverted)
+                  const dataType = 'text/plain;charset=utf-8'//'application/vnd.ms-excel'
+                  const filePath = window.URL.createObjectURL(new Blob(data,{type: dataType}));
+                  const downloadLink = document.createElement("a");
+                  downloadLink.href = filePath;
+                  downloadLink.setAttribute("download","Informe_Solicitado");
+                  document.body.appendChild(downloadLink);
+                  downloadLink.click();
     
                 }
     
@@ -78,3 +90,7 @@ export class ModulosIpdialTmoMetlifeComponent implements OnInit {
   }
 
 }
+
+/*
+
+*/

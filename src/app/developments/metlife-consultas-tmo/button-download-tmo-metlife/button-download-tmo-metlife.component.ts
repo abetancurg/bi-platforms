@@ -14,7 +14,7 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
   @Input() fechaFin = 0;
   @Input() moduloIpDial = 0;
 
-  constructor(public json: HttpServices, private dateDescargaTmo:DateDescargaTmoMetlifeComponent) { }
+  constructor(public httpServices: HttpServices, private dateDescargaTmo:DateDescargaTmoMetlifeComponent) { }
 
   // fechaInicial = this.dateDescargaTmo.funcion()
   // fechaInicial = this.dateDescargaTmo.fechaFin
@@ -31,10 +31,13 @@ export class ButtonDownloadTmoMetlifeComponent implements OnInit {
 
     correrConsultaTMO (){
       // console.log(`LLEGÓ LA SIGUIENTE FEHCA: ${this.fecha}`)
-      this.json.crearOrden(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&separator=%7C`)
-      // this.json.consultaTMO('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-10-15&until=2021-10-16&ip_dialcode=intcob-serfinanza&separator=%7C')
+      // this.json.crearOrden(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.moduloIpDial}&separator=%7C`)
+      this.httpServices.crearOrden('http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=2021-11-03&until=2021-11-04&ip_dialcode=intcob-colsubsidio&separator=%7C')
           .subscribe(
               function name(res: any) {
+                console.log("-------------")
+                console.log(res)
+                console.log("-------------")
                 /*
                   Para visualizar un Object en string y poderlo tomar para
                   descarga.
