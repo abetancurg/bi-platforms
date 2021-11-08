@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModulosIpdialTmoMetlifeComponent } from './modulos-ipdial-tmo-metlife.component';
+import { ModulosIpdialTmoMetlifeComponent } from './componente-01.component';
 
 describe('ModulosIpdialTmoMetlifeComponent', () => {
   let component: ModulosIpdialTmoMetlifeComponent;

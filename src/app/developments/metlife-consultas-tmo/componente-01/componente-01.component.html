@@ -1,4 +1,10 @@
 <body>
+    <h3>Los siguientes son los parámetros necesarios para el descargue de la plantilla:</h3>
+    <br>
+    <div>
+        Fecha Inicial: &nbsp;&nbsp;<input type="date" [(ngModel)]="fechaIni"> &nbsp;&nbsp;
+        Fecha Final: &nbsp;&nbsp;<input type="date" [(ngModel)]="fechaFin">
+    </div>
     <table>
         <tr>
             <td id="td-label-select-module">
@@ -8,23 +14,19 @@
             </td>
             <td id="td-select-module-ipdial">
                 <select id="select-module-ipdial" [(ngModel)]="nombreIdDialCode">
-                        <option *ngFor="let module of ipdial_modules" [value]="module.name">      
+                        <option *ngFor="let module of ipdialModules" [value]="module.name">      
                                 {{module.name}}
                         </option>
                 </select>
             </td>
         </tr>
     </table>
-    <!-- <div [(ngModel)]="nombreIdDialCode" [value]="fechaIni"></div> -->
-    <!-- <app-button-download-tmo-metlife [fechaIni]="fechaIni" [fechaFin]="fechaFin" [moduloIpDial]="seleccionado"></app-button-download-tmo-metlife> -->
-    <!-- <app-button-download-tmo-metlife></app-button-download-tmo-metlife> -->
-
     
     <button (click)="crearOrden()">CREAR ORDEN</button>
 
     <h1>PREGUNTAR STATUS DE LA ORDEN</h1>
 
-    ORDER_ID: <input type="text" [(ngModel)]="statusOrdenId">
+    ORDER_ID: <input type="text" [(ngModel)]="orderIdToGetStatus">
 
     <button (click)="solicitarStatusOrden()">SOLICITAR STATUS</button>
 
@@ -33,10 +35,8 @@
     ORDER_ID: <input type="text" [(ngModel)]="downloadOrdenId">
 
     <button (click)="descargarArchivo()">DESCARGAR ARCHIVO</button>
-    <BR>
-    <BR>
-    <BR>
-
-
+    <br>
+    <br>
+    <br>
 
 </body>

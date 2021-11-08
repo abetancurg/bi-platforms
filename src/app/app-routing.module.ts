@@ -6,7 +6,7 @@ import { UploadFilesDepuradorMetlifeComponent } from './developments/metlife-dep
 import { DateDescargaDepuradorMetlifeComponent } from './developments/metlife-depurador-ventas/date-descarga-depurador-metlife/date-descarga-depurador-metlife.component'
 import { DevelopmentsComponent } from './developments/developments.component'
 import { HomeComponent } from './home/home.component'
-import { DateDescargaTmoMetlifeComponent } from './developments/metlife-consultas-tmo/date-descarga-tmo-metlife/date-descarga-tmo-metlife.component';
+import { Componente01TmoMetlifeComponent } from './developments/metlife-consultas-tmo/componente-01/componente-01.component';
 
 /*
   Es importante crear los componentes que van dentro de los proyectos
@@ -69,7 +69,7 @@ const routes: Routes = [
         ,
         {
           path:'consulta_tmo', 
-          component: DateDescargaTmoMetlifeComponent,
+          component: Componente01TmoMetlifeComponent,
         }
     ]
   }

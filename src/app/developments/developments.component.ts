@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router'
 
-import { DevelopmentsServices } from '../developments-service';
-import { Development } from '../developments-schema';
+import { DevelopmentsServices } from './developments-service';
+import { Development } from './developments-schema';
 import { OperationsComponent } from '../operations/operations.component'
 
 @Component({

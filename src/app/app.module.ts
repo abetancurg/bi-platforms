@@ -21,9 +21,7 @@ import { PlantillasVentasDepuradorMetlifeComponent } from './developments/metlif
 import { ButtonDownloadDepuradorMetlifeComponent } from './developments/metlife-depurador-ventas/button-download-depurador-metlife/button-download-depurador-metlife.component';
 import { HomeComponent } from './home/home.component';
 import { InterceptorService } from 'src/interceptors/interceptor.service';
-import { DateDescargaTmoMetlifeComponent } from './developments/metlife-consultas-tmo/date-descarga-tmo-metlife/date-descarga-tmo-metlife.component';
-import { ModulosIpdialTmoMetlifeComponent } from './developments/metlife-consultas-tmo/modulos-ipdial-tmo-metlife/modulos-ipdial-tmo-metlife.component';
-import { ButtonDownloadTmoMetlifeComponent } from './developments/metlife-consultas-tmo/button-download-tmo-metlife/button-download-tmo-metlife.component';
+import { Componente01TmoMetlifeComponent } from './developments/metlife-consultas-tmo/componente-01/componente-01.component';
 
 //THE FOLLOWING 3 LINES ARE FOR PROOF PURPOSES ONLY:
 export function storageFactory(): OAuthStorage {
@@ -45,9 +43,7 @@ export function storageFactory(): OAuthStorage {
     PlantillasVentasDepuradorMetlifeComponent,
     ButtonDownloadDepuradorMetlifeComponent,
     HomeComponent,
-    DateDescargaTmoMetlifeComponent,
-    ModulosIpdialTmoMetlifeComponent,
-    ButtonDownloadTmoMetlifeComponent,
+    Componente01TmoMetlifeComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { Operation } from '../operation-schema';
-import { Development } from '../developments-schema';
-import { OperationService } from '../operation-service';
-import { DevelopmentsServices } from '../developments-service'
+import { Operation } from './operation-schema';
+import { Development } from '../developments/developments-schema';
+import { OperationService } from './operation-service';
+import { DevelopmentsServices } from '../developments/developments-service'
 
 @Component({
   selector: 'app-operations',

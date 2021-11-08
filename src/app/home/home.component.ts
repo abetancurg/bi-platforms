@@ -13,14 +13,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // get givenName() {
-  //   const claims = this.oauthservice.getIdentityClaims();
-  //   if (!claims) {
-  //     return null;
-  //   }
-  //   console.log('Los claims son: '+ claims)
-  //   return claims;
-  // }
-
-
 }
