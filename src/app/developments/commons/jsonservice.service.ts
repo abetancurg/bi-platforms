@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+// const cors = require('cors')
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,8 @@ export class HttpServices {
 
       let params = new HttpParams().append('churrito','churrito');
 
+
+
       /*
         Si deseo un servicio via GET, parte de la estructura es:
 
@@ -24,6 +27,7 @@ export class HttpServices {
             this.http.post(url, params) <-- Los params son por protocolo, en ellos
             no es necesario enviar datos.
       */
+     console.log(`LA URL CON TARGET ES: ${url}`)
      
       return this.http.post(url, params)
 

@@ -71,6 +71,8 @@ export function storageFactory(): OAuthStorage {
       useClass: InterceptorService,
       //para que esté pendiente de todas las peticiones que hacemos
       multi: true,
+
+      
     }
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+{
+    "/outcomes/*":{
+        "target":"http://127.0.0.1:5000",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true       
+    },
+    "/orders/*":{
+        "target":"http://127.0.0.1:5000",
+        "secure": false,
+        "logLevel": "debug"      
+    },
+    "/outcomes_json/*":{
+        "target":"http://127.0.0.1:5000",
+        "secure": false,
+        "logLevel": "debug"    
+    }
+}

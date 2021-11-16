@@ -35,7 +35,7 @@ export class Componente01TmoMetlifeComponent implements OnInit {
 
   /* Se crean los métodos */
   crearOrden(){
-    this.httpServices.crearOrden(`http://localhost:5000/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.nombreIdDialCode}&separator=%7C`)
+    this.httpServices.crearOrden(`/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.nombreIdDialCode}&separator=%7C`)
           .subscribe(
             (res: any) => {
                 const orderId = res.order_id;
@@ -50,7 +50,7 @@ export class Componente01TmoMetlifeComponent implements OnInit {
   solicitarStatusOrden(){
     // mostrarRueditaDeEspera()
     console.log("El orderId de la orden creada es: ",this.orderIdToGetStatus)
-    this.httpServices.getStatusOrder(`http://localhost:5000/orders/${this.orderIdToGetStatus}`)
+    this.httpServices.getStatusOrder(`/orders/${this.orderIdToGetStatus}`)
           .subscribe(
             (res: any) => {
                 const status = res.status;
@@ -65,7 +65,7 @@ export class Componente01TmoMetlifeComponent implements OnInit {
     descargarArchivo(){
       console.log("El archivo a descargar es del orderId: ",this.downloadOrdenId)
       // this.httpServices.downloadFilesFromOrder(`http://localhost:5000/orders/${this.orderIdToGetStatus}/files`)
-      this.httpServices.downloadFilesFromOrder(`http://localhost:5000/downloads/?order_id=${this.downloadOrdenId}`)
+      this.httpServices.downloadFilesFromOrder(`/outcomes_json/?order_id=${this.downloadOrdenId}`)
             .subscribe(
               (res: any) => {
                 const resConverted = JSON.stringify(res)
