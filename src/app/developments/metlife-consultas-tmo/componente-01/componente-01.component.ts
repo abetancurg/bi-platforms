@@ -64,20 +64,74 @@ export class Componente01TmoMetlifeComponent implements OnInit {
     
     descargarArchivo(){
       console.log("El archivo a descargar es del orderId: ",this.downloadOrdenId)
-      // this.httpServices.downloadFilesFromOrder(`http://localhost:5000/orders/${this.orderIdToGetStatus}/files`)
       this.httpServices.downloadFilesFromOrder(`/outcomes_json/?order_id=${this.downloadOrdenId}`)
             .subscribe(
-              (res: any) => {
-                const resConverted = JSON.stringify(res)
-                const data = []
-                data.push(resConverted)
-                const dataType = 'text/plain;charset=utf-8'//'application/vnd.ms-excel'
-                const filePath = window.URL.createObjectURL(new Blob(data,{type: dataType}));
-                const downloadLink = document.createElement("a");
-                downloadLink.href = filePath;
-                downloadLink.setAttribute("download","Informe_Solicitado");
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
+              (responseAsObj: any) => {
+                /* SE HACE TRANSFORMACIÓN DE JSON A TABLA */
+                
+                /* Se instancian e inicializan las variables
+                   transversales */
+                   var separator = ";"
+                
+                /* Se castea el response */
+                   var responseAsStr = JSON.stringify(responseAsObj)
+                   var responseAsJson = JSON.parse(responseAsStr)
+                
+                /* Se extraen los values del Json, y como resultado
+                   logramos obtener varios diccionarios ya que el Json
+                   original es de 2 niveles */
+                   var valuesFromResponseAsJson: any = Object.values(responseAsJson)
+                
+                /* Se instancian e inicializan las variables para
+                   construir el header */
+                   var headers = ""
+                   var valuesLen = valuesFromResponseAsJson.length
+                   var contador = 0
+                   for (let campoName in responseAsJson){
+                      contador += 1
+                      headers += campoName;
+                      contador < valuesLen ? headers += separator : headers += "\r\n"
+                }
+
+                /* Se instancian e inicializan las variables para construir el body */
+                   var bodyTable = ""
+                   const keysJson = Object.keys(valuesFromResponseAsJson[0])
+                   const keysLen = keysJson.length
+
+                /* Se construye string que almacena el contenido de la tabla sin los headers */
+                   for (let i = 0 ; i < keysLen ; i++ ){
+                     const valueForColumn1 = Object.values(valuesFromResponseAsJson[0])
+                     const valueForColumn2 = Object.values(valuesFromResponseAsJson[1])
+                     const valueForColumn3 = Object.values(valuesFromResponseAsJson[2])
+                     const valueForColumn4 = Object.values(valuesFromResponseAsJson[3])
+                     const valueForColumn5 = Object.values(valuesFromResponseAsJson[4])
+                     const valueForColumn6 = Object.values(valuesFromResponseAsJson[5])
+                     const valueForColumn7 = Object.values(valuesFromResponseAsJson[6])
+                     bodyTable += valueForColumn1[i] + separator + 
+                                  valueForColumn2[i] + separator + 
+                                  valueForColumn3[i] + separator + 
+                                  valueForColumn4[i] + separator + 
+                                  valueForColumn5[i] + separator + 
+                                  valueForColumn6[i] + separator + 
+                                  valueForColumn7[i] + 
+                                  "\r\n"
+                   }
+
+                /* Se concatena tanto los headers como el bodyTable */
+                    var fullTable = ""
+                    fullTable = headers + bodyTable
+
+                /* SE CREA ETIQUETA HTML Y EJECUCIÓN DE LA MISMA PARA DESCARGAR TABLA*/
+                   const data = []
+                   data.push(fullTable)
+                   const dataType = 'text/csv;charset=utf-8;'
+                   // const dataType = 'text/plain;charset=utf-8'  // Se deja este para descargues en txt en caso de que sea necesario
+                   const filePath = window.URL.createObjectURL(new Blob(data,{type: dataType}));
+                   const downloadLink = document.createElement("a");
+                   downloadLink.href = filePath;
+                   downloadLink.setAttribute("download","Informe_Solicitado");
+                   document.body.appendChild(downloadLink);
+                   downloadLink.click();
               }
         )
   }
