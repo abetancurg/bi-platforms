@@ -19,6 +19,8 @@ export class Componente01TmoMetlifeComponent implements OnInit {
 
   downloadOrdenId: string = "";
 
+  orderId = 'Cargando...';
+
   constructor(
     private ipdialModuleService: IpdialModulesService,
     public httpServices: HttpServices,
@@ -38,10 +40,10 @@ export class Componente01TmoMetlifeComponent implements OnInit {
     this.httpServices.crearOrden(`/outcomes/?outcome_type=consulta-tmo&since=${this.fechaIni}&until=${this.fechaFin}&ip_dialcode=${this.nombreIdDialCode}&separator=%7C`)
           .subscribe(
             (res: any) => {
-                const orderId = res.order_id;
+                this.orderId = res.order_id;
                 const status = res.status;
                 console.log("La orden es: ",res);
-                console.log("La orden fue creada. El ordenId es: ",orderId);
+                console.log("La orden fue creada. El ordenId es: ",this.orderId);
                 console.log("El status de la orden creada es: ",status);
             }
       )
