@@ -61,59 +61,64 @@ export class Componente01TmoMetlifeComponent implements OnInit {
             }
       )
     }
-    
+    /* Hasta el 18-11-2021 tuve en github la transformación de json a tabla bajo el orient=Index, luego se pasó 
+       a transformación en función de orient=Table */
     descargarArchivo(){
       console.log("El archivo a descargar es del orderId: ",this.downloadOrdenId)
       this.httpServices.downloadFilesFromOrder(`/outcomes_json/?order_id=${this.downloadOrdenId}`)
             .subscribe(
               (responseAsObj: any) => {
                 /* SE HACE TRANSFORMACIÓN DE JSON A TABLA */
-                
+
                 /* Se instancian e inicializan las variables
                    transversales */
                    var separator = ";"
-                
+
+                   
                 /* Se castea el response */
                    var responseAsStr = JSON.stringify(responseAsObj)
                    var responseAsJson = JSON.parse(responseAsStr)
-                
+                   
                 /* Se extraen los values del Json, y como resultado
                    logramos obtener varios diccionarios ya que el Json
-                   original es de 2 niveles */
-                   var valuesFromResponseAsJson: any = Object.values(responseAsJson)
-                
+                   original es de 2 niveles-> [field1:{0:elemnt1},{1:elemnt2},...] */
+                   var FieldsListFromResponseAsJson: any = responseAsJson['schema']['fields'].slice(1) //Se desprecia el elemento [0] xq es el field Index
+                   
                 /* Se instancian e inicializan las variables para
                    construir el header */
                    var headers = ""
-                   var valuesLen = valuesFromResponseAsJson.length
+                   var valuesLen = FieldsListFromResponseAsJson.length
                    var contador = 0
-                   for (let campoName in responseAsJson){
+                   
+                   FieldsListFromResponseAsJson.forEach((element: any) => {
+                      const fieldName = element['name']
                       contador += 1
-                      headers += campoName;
+                      headers += fieldName;
                       contador < valuesLen ? headers += separator : headers += "\r\n"
-                }
-
+                    }); 
+                    
                 /* Se instancian e inicializan las variables para construir el body */
                    var bodyTable = ""
-                   const keysJson = Object.keys(valuesFromResponseAsJson[0])
-                   const keysLen = keysJson.length
+                   const data = responseAsJson['data']
+                   // console.log(data)
+                   const dataLen = data.length
 
                 /* Se construye string que almacena el contenido de la tabla sin los headers */
-                   for (let i = 0 ; i < keysLen ; i++ ){
-                     const valueForColumn1 = Object.values(valuesFromResponseAsJson[0])
-                     const valueForColumn2 = Object.values(valuesFromResponseAsJson[1])
-                     const valueForColumn3 = Object.values(valuesFromResponseAsJson[2])
-                     const valueForColumn4 = Object.values(valuesFromResponseAsJson[3])
-                     const valueForColumn5 = Object.values(valuesFromResponseAsJson[4])
-                     const valueForColumn6 = Object.values(valuesFromResponseAsJson[5])
-                     const valueForColumn7 = Object.values(valuesFromResponseAsJson[6])
-                     bodyTable += valueForColumn1[i] + separator + 
-                                  valueForColumn2[i] + separator + 
-                                  valueForColumn3[i] + separator + 
-                                  valueForColumn4[i] + separator + 
-                                  valueForColumn5[i] + separator + 
-                                  valueForColumn6[i] + separator + 
-                                  valueForColumn7[i] + 
+                   for (let i = 0 ; i < dataLen ; i++ ){
+                     const valueForColumn1 = data[i]['id_call']
+                     const valueForColumn2 = data[i]['id_customer']
+                     const valueForColumn3 = data[i]['date']
+                     const valueForColumn4 = data[i]['id_agent']
+                     const valueForColumn5 = data[i]['cod_act']
+                     const valueForColumn6 = data[i]['duration']
+                     const valueForColumn7 = data[i]['ipdial_code']
+                     bodyTable += valueForColumn1 + separator + 
+                                  valueForColumn2 + separator + 
+                                  valueForColumn3 + separator + 
+                                  valueForColumn4 + separator + 
+                                  valueForColumn5 + separator + 
+                                  valueForColumn6 + separator + 
+                                  valueForColumn7 + 
                                   "\r\n"
                    }
 
@@ -122,11 +127,11 @@ export class Componente01TmoMetlifeComponent implements OnInit {
                     fullTable = headers + bodyTable
 
                 /* SE CREA ETIQUETA HTML Y EJECUCIÓN DE LA MISMA PARA DESCARGAR TABLA*/
-                   const data = []
-                   data.push(fullTable)
+                   const finalList = []
+                   finalList.push(fullTable)
                    const dataType = 'text/csv;charset=utf-8;'
                    // const dataType = 'text/plain;charset=utf-8'  // Se deja este para descargues en txt en caso de que sea necesario
-                   const filePath = window.URL.createObjectURL(new Blob(data,{type: dataType}));
+                   const filePath = window.URL.createObjectURL(new Blob(finalList,{type: dataType}));
                    const downloadLink = document.createElement("a");
                    downloadLink.href = filePath;
                    downloadLink.setAttribute("download","Informe_Solicitado");

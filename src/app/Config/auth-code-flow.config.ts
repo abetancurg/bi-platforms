@@ -3,8 +3,9 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const authCodeFlowConfig: AuthConfig = {
 
     //The following url you might extract from de well-known part of the Línea de Producción:
-    // issuer : 'http://host.docker.internal:9080/auth/realms/contento-local',
-    issuer : 'http://sso-server:9080/auth/realms/contento-local',
+    // issuer : 'http://host.docker.internal:9080/auth/realms/contento-local', //por si Robert me regaña
+    // issuer : 'http://sso-server:9080/auth/realms/contento-local', //para pruebas locales
+    issuer : 'https://contento-developer.uc.r.appspot.com/auth/realms/contento-developer',
 
     requireHttps: false,
 

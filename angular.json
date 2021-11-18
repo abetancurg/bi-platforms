@@ -74,11 +74,7 @@
               "browserTarget": "bi-platforms:build:development"
             }
           },
-          "defaultConfiguration": "development",
-          "options": {
-            "browserTarget": "bi-platforms:build",
-            "proxyConfig": "proxy.config.json"
-          }
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

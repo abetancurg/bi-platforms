@@ -1,0 +1,20 @@
+{
+    "/outcomes/*":{
+        "target":"https://metlife-api-ljdhc3eega-uc.a.run.app",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true       
+    },
+    "/orders/*":{
+        "target":"https://metlife-api-ljdhc3eega-uc.a.run.app",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true      
+    },
+    "/outcomes_json/*":{
+        "target":"https://metlife-api-ljdhc3eega-uc.a.run.app",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true    
+    }
+}
